@@ -26,6 +26,7 @@ Developer note: The software implements the [Torznab](https://github.com/Sonarr/
 
  * 1337x
  * 7torrents
+ * AcademicTorrents
  * ACG.RIP
  * ACGsou
  * Anidex
@@ -89,6 +90,7 @@ Developer note: The software implements the [Torznab](https://github.com/Sonarr/
  * NoName Club (NNM-Club)
  * Nyaa.si
  * Nyaa-Pantsu
+ * OneJAV
  * OxTorrent
  * PiratBit
  * Pirateiro
@@ -356,7 +358,6 @@ Developer note: The software implements the [Torznab](https://github.com/Sonarr/
  * New Real World
  * Norbits
  * NordicBits (NB)
- * NORDiCHD
  * Nostalgic (The Archive)
  * notwhat.cd
  * OnlineSelfEducation
@@ -400,7 +401,6 @@ Developer note: The software implements the [Torznab](https://github.com/Sonarr/
  * ScenePalace (SP)
  * SceneRush
  * SceneTime
- * SceneXpress
  * SDBits
  * Secret Cinema
  * SeedFile (SF)
@@ -434,7 +434,6 @@ Developer note: The software implements the [Torznab](https://github.com/Sonarr/
  * The New Retro
  * The Occult
  * The Place
- * The Resurrection
  * The Shinning (TsH)
  * The Show
  * The-Madhouse

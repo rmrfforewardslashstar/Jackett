@@ -271,11 +271,12 @@ namespace Jackett.Updater
                 "Content/crissXcross.png",
                 "Content/css/jquery.dataTables.css",
                 "Content/css/jquery.dataTables_themeroller.css",
+                "CsQuery.dll",
                 "CurlSharp.dll",
                 "CurlSharp.pdb",
                 "Definitions/420files.yml",
-                "Definitions/aox.yml",
                 "Definitions/anidex.yml", // migrated to C#
+                "Definitions/aox.yml",
                 "Definitions/apollo.yml", // migrated to C# gazelle base tracker
                 "Definitions/archetorrent.yml",
                 "Definitions/asiandvdclub.yml",
@@ -332,6 +333,7 @@ namespace Jackett.Updater
                 "Definitions/music-master.yml",
                 "Definitions/nachtwerk.yml",
                 "Definitions/nexttorrent.yml",
+                "Definitions/nordichd.yml",
                 "Definitions/nyaa.yml",
                 "Definitions/nyoo.yml",
                 "Definitions/passionetorrent.yml",
@@ -346,6 +348,7 @@ namespace Jackett.Updater
                 "Definitions/rockhardlossless.yml",
                 "Definitions/scenehd.yml", // migrated to C# (use JSON API)
                 "Definitions/scenereactor.yml",
+                "Definitions/scenexpress.yml",
                 "Definitions/secretcinema.yml", // migrated to C# gazelle base tracker
                 "Definitions/sharingue.yml",
                 "Definitions/skytorrents.yml",
@@ -357,6 +360,7 @@ namespace Jackett.Updater
                 "Definitions/tbplus.yml",
                 "Definitions/tehconnection.yml",
                 "Definitions/themoviecave.yml",
+                "Definitions/theresurrection.yml",
                 "Definitions/thetorrents.yml",
                 "Definitions/tigers-dl.yml",
                 "Definitions/tntvillage.yml",
@@ -383,9 +387,11 @@ namespace Jackett.Updater
                 "Microsoft.Owin.Hosting.dll",
                 "Microsoft.Owin.StaticFiles.dll",
                 "Owin.dll",
+                "System.ServiceModel.dll",
                 "System.Web.Http.dll",
                 "System.Web.Http.Owin.dll",
                 "System.Web.Http.Tracing.dll",
+                "System.Xml.XPath.XmlDocument.dll"
             };
 
             foreach (var oldFile in oldFiles)
