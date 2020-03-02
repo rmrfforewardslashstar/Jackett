@@ -250,6 +250,12 @@ function displayUnconfiguredIndexersList() {
             });
         });
     });
+  UnconfiguredIndexersDialog.find('.indexer-add-all').each(function (i, btn) {
+      //var indexer = unconfiguredIndexers[i];
+      $(btn).click(function () {
+        doNotify("Indexer Setup All");
+      });
+    });
     indexersTable.find("table").DataTable(
         {
             "stateSave": true,
@@ -1159,6 +1165,10 @@ function bindUIButtons() {
     $("#jackett-show-search").click(function () {
         showSearch(null);
         window.location.hash = "search";
+    });
+
+    $("#jackett-add-all-public").click(function () {
+      doNotify("This is a Test", "danger", "glyphicon glyphicon-alert");
     });
 
     $("#view-jackett-logs").click(function () {

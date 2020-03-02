@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -60,18 +60,21 @@
         </div>
 
         <div class="pull-right">
-            <button id="jackett-add-indexer" class="btn btn-success btn-sm">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add indexer
-            </button>
-            <button id="jackett-show-search" class="btn btn-success btn-sm">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Manual Search
-            </button>
-            <button id="jackett-show-releases" class="btn btn-primary btn-sm">
-                <i class="fa fa-database"></i>  View cached releases
-            </button>
-            <button id="jackett-test-all" class="btn btn-warning btn-sm">
-                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Test All
-            </button>
+          <button id="jackett-add-indexer" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add indexer
+          </button>
+          <button id="jackett-add-all-public" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add All Public
+          </button>
+          <button id="jackett-show-search" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Manual Search
+          </button>
+          <button id="jackett-show-releases" class="btn btn-primary btn-sm">
+            <i class="fa fa-database"></i>  View cached releases
+          </button>
+          <button id="jackett-test-all" class="btn btn-warning btn-sm">
+            <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Test All
+          </button>
         </div>
         <h3>Configured Indexers</h3>
         <div id="indexers"> </div>
@@ -336,48 +339,48 @@
     </script>
 
     <script id="unconfigured-indexer-table" type="text/x-handlebars-template">
-        <div class="unconfigured-indexer-div">
-            <table id="unconfigured-indexer-datatable" class="indexer-table dataTable compact cell-border hover stripe table table-responsive">
-                <thead>
-                    <tr>
-                        <th>Indexer</th>
-                        <th>Categories</th>
-                        <th>Type</th>
-                        <th>Type string</th>
-                        <th>Language</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each indexers}}
-                    <tr class="unconfigured-indexer-row">
-                        <td><a target="_blank" href="{{site_link}}" title="{{description}}">{{name}}</a></td>
-                        <td>{{mains_cats}}</td>
-                        <td class="fit"><span title="{{type}}" class="label label-{{type_label}}" style="text-transform: capitalize;">{{type}}</span></td>
-                        <td>{{type}}</td>
-                        <td class="fit">{{language}}</td>
-                        <td class="fit">
-                            <div class="indexer-buttons">
-                                <button title="Configure" class="btn btn-primary btn-xs indexer-setup" data-id="{{id}}" data-link="{{site_link}}">
-                                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                                </button>
-                                {{#if_eq type "public"}}
-                                <button title="Add" class="btn btn-success btn-xs indexer-add" data-id="{{id}}" data-link="{{site_link}}">
-                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                </button>
-                                {{/if_eq}}
-                            </div>
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="6"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+      <div class="unconfigured-indexer-div">
+        <table id="unconfigured-indexer-datatable" class="indexer-table dataTable compact cell-border hover stripe table table-responsive">
+          <thead>
+            <tr>
+              <th>Indexer</th>
+              <th>Categories</th>
+              <th>Type</th>
+              <th>Type string</th>
+              <th>Language</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each indexers}}
+            <tr class="unconfigured-indexer-row">
+              <td><a target="_blank" href="{{site_link}}" title="{{description}}">{{name}}</a></td>
+              <td>{{mains_cats}}</td>
+              <td class="fit"><span title="{{type}}" class="label label-{{type_label}}" style="text-transform: capitalize;">{{type}}</span></td>
+              <td>{{type}}</td>
+              <td class="fit">{{language}}</td>
+              <td class="fit">
+                <div class="indexer-buttons">
+                  <button title="Configure" class="btn btn-primary btn-xs indexer-setup" data-id="{{id}}" data-link="{{site_link}}">
+                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                  </button>
+                  {{#if_eq type "public"}}
+                  <button title="Add" class="btn btn-success btn-xs indexer-add" data-id="{{id}}" data-link="{{site_link}}">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  </button>
+                  {{/if_eq}}
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </script>
 
     <script id="jackett-releases" type="text/x-handlebars-template">
@@ -584,20 +587,21 @@
             </tfoot>
         </table>
     </script>
+
     <script id="select-indexer" type="text/x-handlebars-template">
         <div id="select-indexer-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Select an indexer to setup</h4>
-                    </div>
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Select an indexer to setup</h4>
+                  </div>
                     <div class="modal-body">
                         <div id="unconfigured-indexers">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
