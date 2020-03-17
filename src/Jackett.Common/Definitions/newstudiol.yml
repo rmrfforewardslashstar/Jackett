@@ -1,4 +1,4 @@
-﻿---
+---
   site: newstudiol
   name: NewstudioL
   description: "this is the Newstudio indexer with Login enabled in the config."
@@ -6,7 +6,7 @@
   type: semi-private
   encoding: UTF-8
   links:
-    - http://newstudio.tv/
+    - http://newstudio.tv/ # site does not support https ERR_CONNECTION_REFUSED
 
   caps:
     categorymappings:

@@ -1,4 +1,4 @@
-﻿---
+---
   site: newstudio
   name: Newstudio
   description: "Newstudio is a RUSSIAN Public site for TV"
@@ -6,7 +6,7 @@
   type: public
   encoding: UTF-8
   links:
-    - http://newstudio.tv/
+    - http://newstudio.tv/ # site does not support https ERR_CONNECTION_REFUSED
 
   caps:
     categorymappings:

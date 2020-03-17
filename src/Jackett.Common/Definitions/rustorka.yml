@@ -1,4 +1,4 @@
-﻿---
+---
   site: rustorka
   name: Rustorka
   description: "Rustorka is a RUSSIAN Semi-Private Torrent Tracker for MOVIES / GENERAL"
@@ -6,7 +6,7 @@
   type: semi-private
   encoding: windows-1251
   links:
-    - http://rustorka.com/
+    - http://rustorka.com/ # site forces http, does not support https
 
   caps:
     categorymappings:
