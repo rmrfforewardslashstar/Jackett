@@ -63,9 +63,6 @@
           <button id="jackett-add-indexer" class="btn btn-success btn-sm">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add indexer
           </button>
-          <button id="jackett-add-all-public" class="btn btn-success btn-sm">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add All Public
-          </button>
           <button id="jackett-show-search" class="btn btn-success btn-sm">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Manual Search
           </button>
@@ -342,6 +339,9 @@
       <div class="unconfigured-indexer-div">
         <table id="unconfigured-indexer-datatable" class="indexer-table dataTable compact cell-border hover stripe table table-responsive">
           <thead>
+            <button id="add-all-public" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add All Public
+            </button>
             <tr>
               <th>Indexer</th>
               <th>Categories</th>
@@ -380,6 +380,7 @@
             </tr>
           </tfoot>
         </table>
+
       </div>
     </script>
 

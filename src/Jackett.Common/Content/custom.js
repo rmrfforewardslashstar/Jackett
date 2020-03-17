@@ -219,6 +219,55 @@ function displayUnconfiguredIndexersList() {
             });
         });
     });
+  indexersTable.find('#add-all-public').each(function (i, btn) {
+    var indexer = unconfiguredIndexers[i];
+    
+    $(btn).click(function () {
+      for (var i = 0; i < unconfiguredIndexers.length; i++) {
+        var item = indexer[i];
+        
+        //all indexers
+        if (item.type == "public") {
+          //public only
+          
+          $('#select-indexer-modal').modal('hide').on('hidden.bs.modal', function (e) {
+            var indexerId = item;
+            doNotify(indexerId.id + " " + indexerId.type, "success", "glyphicon glyphicon-alert");
+            
+            api.getIndexerConfig(indexerId, function (data) {
+              if (data.result !== undefined && data.result == "error") {
+                doNotify("Error: " + indexerId.name + " " + data.error, "danger", "glyphicon glyphicon-alert");
+                return;
+              }
+              api.updateIndexerConfig(indexerId, data, function (data) {
+                if (data == undefined) {
+                  reloadIndexers();
+                  doNotify("Successfully configured " + name, "success", "glyphicon glyphicon-ok");
+                  return;
+                } else if (data.result == "error") {
+                  if (data.config) {
+                    populateConfigItems(configForm, data.config);
+                  }
+                  doNotify("Configuration failed: " + indexerId.name + " " + data.error, "danger", "glyphicon glyphicon-alert");
+                  return;
+                }
+              }).fail(function (data) {
+                if (data.responseJSON.error !== undefined) {
+                  var indexEnd = 2048 - "https://github.com/Jackett/Jackett/issues/new?title=[".length - indexerId.length - "] ".length - " (Config)".length; // keep url <= 2k #5104
+                  doNotify("An error occurred while configuring this indexer<br /><b>" + data.responseJSON.error.substring(0, indexEnd) + "</b><br /><i><a href=\"https://github.com/Jackett/Jackett/issues/new?title=[" + indexerId + "] " + data.responseJSON.error.substring(0, indexEnd) + " (Config)\" target=\"_blank\">Click here to open an issue on GitHub for this indexer.</a><i>", "danger", "glyphicon glyphicon-alert", false);
+                } else {
+                  doNotify("An error occurred while configuring this indexer, is Jackett server running ?", "danger", "glyphicon glyphicon-alert");
+                }
+              });
+            });
+          });
+        }
+        else {
+          //private / semi only
+        }
+      }
+    });
+  });
     indexersTable.find('.indexer-add').each(function (i, btn) {
         $(btn).click(function () {
             $('#select-indexer-modal').modal('hide').on('hidden.bs.modal', function (e) {
@@ -249,12 +298,6 @@ function displayUnconfiguredIndexersList() {
                 });
             });
         });
-    });
-  UnconfiguredIndexersDialog.find('.indexer-add-all').each(function (i, btn) {
-      //var indexer = unconfiguredIndexers[i];
-      $(btn).click(function () {
-        doNotify("Indexer Setup All");
-      });
     });
     indexersTable.find("table").DataTable(
         {
@@ -1165,10 +1208,6 @@ function bindUIButtons() {
     $("#jackett-show-search").click(function () {
         showSearch(null);
         window.location.hash = "search";
-    });
-
-    $("#jackett-add-all-public").click(function () {
-      doNotify("This is a Test", "danger", "glyphicon glyphicon-alert");
     });
 
     $("#view-jackett-logs").click(function () {
